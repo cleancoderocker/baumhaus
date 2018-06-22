@@ -2,7 +2,7 @@
 
 A simple package for parsing different file formats to an abstract syntax tree based on the MIME type detected. 
 
-```
+```javascript
 const filePath = path.join(__dirname, 'input', 'styles.css');
 const result = await baum.parse(filePath);
 ```
