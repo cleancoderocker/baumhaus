@@ -1,20 +1,20 @@
-# baum
+# baumhaus
 
 A simple package for parsing different file formats to an abstract syntax tree based on the MIME type detected. 
 
 ## Installation
 
-`npm install baum`
+`npm install baumhaus`
 
 ## Usage
 
 ```javascript
-const baum = require('baum');
+const baumhaus = require('baumhaus');
 const path = require('path');
 const filePath = path.join(__dirname, 'input', 'styles.css');
 
 (async () => {
-  const ast = await baum.parse(filePath);
+  const ast = await baumhaus.parse(filePath);
   console.log(ast);
 })();
 ```
