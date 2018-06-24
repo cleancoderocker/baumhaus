@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest"
+	"test": "npx jest",
+	"coverage": "npx jest --coverage"
   },
   "keywords": [],
   "author": "Philip Ackermann <info@philipackermann.de>",
