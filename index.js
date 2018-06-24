@@ -41,12 +41,22 @@ parserMap.set('application/xml', parseXML);
 parserMap.set('application/json', parseJSON);
 
 module.exports = {
-  async parse(path) {
-    const mimeType = mt.lookup(path);
+  async parse(content, mimeType) {
+    switch (arguments.length) {
+      case 1:
+        // file provided
+        const path = content;
+        content = fs.readFileSync(path).toString();
+        mimeType = mt.lookup(path);
+        break;
+      case 2:
+        // content and mime type provided
+        break;
+    }
+
     const parserFunction = parserMap.get(mimeType);
     if (parserFunction) {
-      const fileContent = fs.readFileSync(path).toString();
-      return parserFunction(fileContent);
+      return parserFunction(content);
     }
   }
 };

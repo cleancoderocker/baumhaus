@@ -11,6 +11,7 @@ A simple package for parsing different file formats to an abstract syntax tree b
 ```javascript
 const baumhaus = require('baumhaus');
 const path = require('path');
+
 const base = path.join(__dirname, 'input');
 const css = path.join(base, 'styles.css');
 const md = path.join(base, 'markdown.md');
