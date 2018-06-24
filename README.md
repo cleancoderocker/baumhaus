@@ -11,11 +11,19 @@ A simple package for parsing different file formats to an abstract syntax tree b
 ```javascript
 const baumhaus = require('baumhaus');
 const path = require('path');
-const filePath = path.join(__dirname, 'input', 'styles.css');
+const base = path.join(__dirname, 'input');
+const css = path.join(base, 'styles.css');
+const md = path.join(base, 'markdown.md');
+const js = path.join(base, 'scripts.js');
+const xml = path.join(base, 'document.xml');
+const json = path.join(base, 'document.json');
 
 (async () => {
-  const ast = await baumhaus.parse(filePath);
-  console.log(ast);
+  const astCSS = await baumhaus.parse(css);
+  const astMD = await baumhaus.parse(md);
+  const astJS = await baumhaus.parse(js);
+  const astXML = await baumhaus.parse(xml);
+  const astJSON = await baumhaus.parse(json);
 })();
 ```
 
