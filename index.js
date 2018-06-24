@@ -33,6 +33,7 @@ const parseJSON = async input => {
   return JSON.parse(input);
 };
 
+// TODO: update supported MIME types
 const parserMap = new Map();
 parserMap.set('text/markdown', parseMarkdown);
 parserMap.set('text/css', parseCSS);
