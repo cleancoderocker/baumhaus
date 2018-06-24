@@ -54,10 +54,13 @@ module.exports = {
         // content and mime type provided
         break;
     }
-
+    const result = {
+      mimeType
+    };
     const parserFunction = parserMap.get(mimeType);
     if (parserFunction) {
-      return parserFunction(content);
+      result.ast = await parserFunction(content);
     }
+    return result;
   }
 };
